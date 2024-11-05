@@ -11,7 +11,7 @@ public class Student {
     public Student(String name, int age, double gpa) {
         this.name = name;
         this.age = age;
-        this.gpa = gpa;
+        setGpa(gpa);
     }
 
     //Implement Public Getter and Setter for GPA
@@ -20,12 +20,10 @@ public class Student {
             return "Excellent!";
         }else if (gpa>=2 && gpa <=3){
             return "Good.";
-        }else if(gpa<2)  {
+        }else   {
             return "Needs Improvement.";
         }
-        else{
-            return "Out of Range";
-        }
+
     }
 
     public void setGpa(double gpa) {
@@ -33,6 +31,7 @@ public class Student {
             this.gpa = gpa;
         }else{
             System.out.println("Invalid GPA.");
+            this.gpa = 0.0;
         }
     }
 
@@ -48,13 +47,6 @@ public class Student {
     }
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public static void main(String[] args) {
-        Student student1 = new Student("Farah", 20, 5.0);
-        System.out.println(student1.getGpaStatus());
-
-
     }
 
 }
